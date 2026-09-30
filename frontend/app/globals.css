@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+.floating-heading {
+  animation: floatingHeading 4s ease-in-out infinite;
+}
+
+@keyframes floatingHeading {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
