@@ -17,7 +17,7 @@ export default function Home() {
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [language, setLanguage] = useState("plaintext");
+  const [language, setLanguage] = useState("language type");
 
   const analyzeCode = async () => {
     if (!code.trim()) {

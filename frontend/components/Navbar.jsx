@@ -11,7 +11,7 @@ export default function Navbar() {
         </div>
 
         <a
-          href="https://github.com"
+          href="https://github.com/abhiraj05"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
