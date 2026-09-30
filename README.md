@@ -16,10 +16,13 @@ An AI-powered tool that analyzes source code and determines its **time complexit
 
 * Python
 * JavaScript
+* TypeScript
 * Java
 * C++
 * C
 * C#
+* Go
+* Rust
 
 ## Tech Stack
 
