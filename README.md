@@ -1,4 +1,4 @@
-# Code Complexity Analyzer
+# Code Time Complexity Analyzer
 
 An AI-powered tool that analyzes source code and determines its **time complexity, space complexity, and detailed code-level analysis**.
 
