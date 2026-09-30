@@ -30,6 +30,17 @@ An AI-powered tool that analyzes source code and determines its **time complexit
 
 ## Installation
 
+### Clone the Repository
+
+```bash
+git clone https://github.com/Abhiraj05/time-complexity-analyzer
+```
+
+### Prerequisites
+
+- Python 3.10+
+- Node.js 18+
+
 ### Backend
 
 ```bash
