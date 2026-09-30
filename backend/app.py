@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 from flask import Flask, request, abort, jsonify
+from flask_cors import CORS
 from werkzeug.exceptions import HTTPException
 from schemas.request_schema import RequestSchema
 from schemas.output_schema import CodeAnalysisOutputSchema
@@ -10,6 +11,10 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 
 # app initialised
 app = Flask(__name__)
+
+
+# allowed origins
+CORS(app,origins=["http://localhost:3000"])
 
 
 # loads environment variables
@@ -43,7 +48,7 @@ def handle_error(e):
 @app.route("/analyse", methods=["POST"])
 async def analyse_complexity():
     json_file = request.get_json(force=True)
-    data = RequestSchema(json_file)
+    data = RequestSchema(**json_file)
     source_code = data.code
 
     try:
@@ -51,8 +56,8 @@ async def analyse_complexity():
             abort(404, description="source code not found !")
         prompt = code_analysis_prompt()
         final_chain = prompt | structured_llm_model
-        response = await final_chain.invoke({"code": source_code})
-        return {"response": response}
+        response = await final_chain.ainvoke({"source_code": source_code})
+        return {"response": response.model_dump()}
 
     except Exception as e:
         abort(400, description=str(e))

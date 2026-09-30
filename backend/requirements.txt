@@ -1,0 +1,5 @@
+"Flask[async]"
+-U langchain  
+-U langchain-google-genai
+python-dotenv
+flask-cors
